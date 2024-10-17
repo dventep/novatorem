@@ -1,8 +1,15 @@
- {
-  "redirects": [
-    {
-      "source": "/",
-      "destination": "https://github.com/dventep/novatorem"
-    }
-  ]
+{
+    "builds": [
+      {
+        "src": "api/**/*.py",
+        "use": "@vercel/python"
+      }
+    ],
+    "routes": [
+      {
+        "src": "/api/(.*)",
+        "dest": "/api/$1"
+      }
+    ]
 }
+  
